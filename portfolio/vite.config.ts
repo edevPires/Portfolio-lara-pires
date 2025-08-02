@@ -14,7 +14,7 @@ export default defineConfig({
     react(), 
   ],
   build: {
-    outDir: '../server/public',
+    outDir: './server/public',
     emptyOutDir: true,
   }
 });
