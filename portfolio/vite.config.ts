@@ -13,4 +13,8 @@ export default defineConfig({
     }),
     react(), 
   ],
+  build: {
+    outDir: '../server/public',
+    emptyOutDir: true,
+  }
 });

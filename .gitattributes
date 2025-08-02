@@ -1,2 +1,13 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Ignora a pasta de dependências do pnpm
+node_modules/
+
+# Ignora os arquivos de log do pnpm
+pnpm-debug.log
+
+# Outros arquivos e pastas de build/cache que você pode querer ignorar
+.DS_Store
+.env
+dist/
+build/

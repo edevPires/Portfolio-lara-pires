@@ -1,9 +1,48 @@
-@import "tailwindcss";
+:root {
+  --primary: #f0f0f0;
+  --secondary: #1b1b1b;
+}
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* opcional, para mudar tema dinamicamente */
+.dark {
+  --primary: #1b1b1b;
+  --secondary: #f0f0f0;
+}
+
+@theme {
+  --font-primary: 'Bahnschrift', sans-serif;
+  --font-secondary: 'Altone', sans-serif;
+  --font-secondary-bold: 'Altone Bold', sans-serif;
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  --breakpoint-xs: 30rem;   /* 480px */
+  --breakpoint-sm: 40rem;   /* 640px */
+  --breakpoint-md: 48rem;   /* 768px */
+  --breakpoint-lg: 64rem;   /* 1024px */
+  --breakpoint-xl: 80rem;   /* 1280px */
+  --breakpoint-2xl: 96rem;  /* 1536px */
+  --breakpoint-3xl: 120rem; /* 1920px */
+}
+
+@layer base {
+  
+  @font-face {
+    font-family: 'Altone';
+    src: url('./assets/fonts/altone/Altone-Trial-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Altone Bold';
+    src: url('./assets/fonts/altone/Altone-Trial-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Bahnschrift';
+    src: url('./assets/fonts/bahnschrift/BAHNSCHRIFT.TTF') format('truetype');
+  }
 }
 
 
+@import "tailwindcss";
