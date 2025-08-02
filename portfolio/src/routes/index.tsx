@@ -15,7 +15,7 @@ function RouteComponent() {
   return (
     <>
       <FullSection className='pt-30 lg:pt-20'>
-        <div className='relative flex flex-col lg:flex-row items-center justify-center h-full gap-4 lg:gap-15 pb-20 lg:pb-0'>
+        <div className='relative flex flex-col lg:flex-row items-center justify-center h-full gap-4 lg:gap-15 pb-25 lg:pb-0'>
           <div className='flex flex-row lg:flex-col items-end w-fit'>
             <HeroText label='Olá,' className='leading-20 lg:leading-none'/>
             <div className='flex w-full flex-col justify-center'>
