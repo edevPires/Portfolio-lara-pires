@@ -7,6 +7,7 @@ import Lara from '../assets/logo/lara.png';
 import { ChevronsDown } from 'lucide-react';
 import GradientButton from '../components/ui/gradient-button';
 import LogoRounded from '../assets/logo/logo_rounded.png';
+import Footer from '../components/ui/footer';
 
 import ProjectCard from '../components/ui/project-card';
 import projects from '../data/projects.json';
@@ -37,7 +38,7 @@ function RouteComponent() {
             <HeroText label='Pires' className='leading-20 lg:leading-26' />
             <GradientButton
               label='Diretora de Arte'
-              className='lg:w-3/4 w-full mt-1'
+              className='lg:w-3/4 w-full mt-1 py-2'
             />
           </div>
           <div className='absolute bottom-1 left-1/2 transform -translate-x-1/2  flex flex-col justify-center items-center font-bahnchrift'>

@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({isOpen, setIsOpen}) => {
 
                 <GradientButton 
                     label='Quero mais'
-                    className='w-full'
+                    className='w-full py-4'
                 />
             </nav>
         </aside>

@@ -9,72 +9,95 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as MerdatomicaRouteImport } from './routes/merdatomica'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TrabalhosPinheiroVargasRouteImport } from './routes/trabalhos/pinheiro-vargas'
+import { Route as TrabalhosMestreCilsoRouteImport } from './routes/trabalhos/mestre-cilso'
+import { Route as TrabalhosInstitutoDellerRouteImport } from './routes/trabalhos/instituto-deller'
+import { Route as TrabalhosAaamupRouteImport } from './routes/trabalhos/aaamup'
 
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MerdatomicaRoute = MerdatomicaRouteImport.update({
-  id: '/merdatomica',
-  path: '/merdatomica',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrabalhosPinheiroVargasRoute = TrabalhosPinheiroVargasRouteImport.update({
+  id: '/trabalhos/pinheiro-vargas',
+  path: '/trabalhos/pinheiro-vargas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrabalhosMestreCilsoRoute = TrabalhosMestreCilsoRouteImport.update({
+  id: '/trabalhos/mestre-cilso',
+  path: '/trabalhos/mestre-cilso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrabalhosInstitutoDellerRoute =
+  TrabalhosInstitutoDellerRouteImport.update({
+    id: '/trabalhos/instituto-deller',
+    path: '/trabalhos/instituto-deller',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TrabalhosAaamupRoute = TrabalhosAaamupRouteImport.update({
+  id: '/trabalhos/aaamup',
+  path: '/trabalhos/aaamup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/merdatomica': typeof MerdatomicaRoute
-  '/sobre': typeof SobreRoute
+  '/trabalhos/aaamup': typeof TrabalhosAaamupRoute
+  '/trabalhos/instituto-deller': typeof TrabalhosInstitutoDellerRoute
+  '/trabalhos/mestre-cilso': typeof TrabalhosMestreCilsoRoute
+  '/trabalhos/pinheiro-vargas': typeof TrabalhosPinheiroVargasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/merdatomica': typeof MerdatomicaRoute
-  '/sobre': typeof SobreRoute
+  '/trabalhos/aaamup': typeof TrabalhosAaamupRoute
+  '/trabalhos/instituto-deller': typeof TrabalhosInstitutoDellerRoute
+  '/trabalhos/mestre-cilso': typeof TrabalhosMestreCilsoRoute
+  '/trabalhos/pinheiro-vargas': typeof TrabalhosPinheiroVargasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/merdatomica': typeof MerdatomicaRoute
-  '/sobre': typeof SobreRoute
+  '/trabalhos/aaamup': typeof TrabalhosAaamupRoute
+  '/trabalhos/instituto-deller': typeof TrabalhosInstitutoDellerRoute
+  '/trabalhos/mestre-cilso': typeof TrabalhosMestreCilsoRoute
+  '/trabalhos/pinheiro-vargas': typeof TrabalhosPinheiroVargasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/merdatomica' | '/sobre'
+  fullPaths:
+    | '/'
+    | '/trabalhos/aaamup'
+    | '/trabalhos/instituto-deller'
+    | '/trabalhos/mestre-cilso'
+    | '/trabalhos/pinheiro-vargas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/merdatomica' | '/sobre'
-  id: '__root__' | '/' | '/merdatomica' | '/sobre'
+  to:
+    | '/'
+    | '/trabalhos/aaamup'
+    | '/trabalhos/instituto-deller'
+    | '/trabalhos/mestre-cilso'
+    | '/trabalhos/pinheiro-vargas'
+  id:
+    | '__root__'
+    | '/'
+    | '/trabalhos/aaamup'
+    | '/trabalhos/instituto-deller'
+    | '/trabalhos/mestre-cilso'
+    | '/trabalhos/pinheiro-vargas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  MerdatomicaRoute: typeof MerdatomicaRoute
-  SobreRoute: typeof SobreRoute
+  TrabalhosAaamupRoute: typeof TrabalhosAaamupRoute
+  TrabalhosInstitutoDellerRoute: typeof TrabalhosInstitutoDellerRoute
+  TrabalhosMestreCilsoRoute: typeof TrabalhosMestreCilsoRoute
+  TrabalhosPinheiroVargasRoute: typeof TrabalhosPinheiroVargasRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/merdatomica': {
-      id: '/merdatomica'
-      path: '/merdatomica'
-      fullPath: '/merdatomica'
-      preLoaderRoute: typeof MerdatomicaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -82,13 +105,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trabalhos/pinheiro-vargas': {
+      id: '/trabalhos/pinheiro-vargas'
+      path: '/trabalhos/pinheiro-vargas'
+      fullPath: '/trabalhos/pinheiro-vargas'
+      preLoaderRoute: typeof TrabalhosPinheiroVargasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trabalhos/mestre-cilso': {
+      id: '/trabalhos/mestre-cilso'
+      path: '/trabalhos/mestre-cilso'
+      fullPath: '/trabalhos/mestre-cilso'
+      preLoaderRoute: typeof TrabalhosMestreCilsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trabalhos/instituto-deller': {
+      id: '/trabalhos/instituto-deller'
+      path: '/trabalhos/instituto-deller'
+      fullPath: '/trabalhos/instituto-deller'
+      preLoaderRoute: typeof TrabalhosInstitutoDellerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trabalhos/aaamup': {
+      id: '/trabalhos/aaamup'
+      path: '/trabalhos/aaamup'
+      fullPath: '/trabalhos/aaamup'
+      preLoaderRoute: typeof TrabalhosAaamupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  MerdatomicaRoute: MerdatomicaRoute,
-  SobreRoute: SobreRoute,
+  TrabalhosAaamupRoute: TrabalhosAaamupRoute,
+  TrabalhosInstitutoDellerRoute: TrabalhosInstitutoDellerRoute,
+  TrabalhosMestreCilsoRoute: TrabalhosMestreCilsoRoute,
+  TrabalhosPinheiroVargasRoute: TrabalhosPinheiroVargasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

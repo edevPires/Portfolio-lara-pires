@@ -2,25 +2,92 @@
     "project-1": {
         "id": 1,
         "name": "Pinheiro Vargas",
-        "path": "/assets/projects/project-1.jpg",
-        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+        "date": "2022",
+        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ],
+        "tags_formated": "Identidade Visual | Direção de Arte | Logotipo",
+        "url": "/trabalhos/pinheiro-vargas",
+        "path": "/assets/projects/pinheiro-vargas/thumbnail.jpg",
+        "text": [
+            "Pinheiro Vargas Advocacia é uma empresa que auxilia juridicamente seus clientes em diversas áreas do direito, oferecendo soluções amparadas pela legislação e jurisprudência nacional.",
+
+            "O conceito por trás do símbolo, além de visar a área de atuação, também representa o maior diferencial do escritório em relação às corporações robóticas que já estão no mercado: Um atendimento focado no emocional do cliente.",
+
+            "PSI (Ψ) foi sutilmente acrescentado, uma vez que simboliza essa conexão com o sentimental."
+        ],
+        "images": [
+            "/assets/projects/pinheiro-vargas/00.jpg",
+            "/assets/projects/pinheiro-vargas/01.jpg",
+            "/assets/projects/pinheiro-vargas/03.jpg",
+            "/assets/projects/pinheiro-vargas/04.jpg",
+            "/assets/projects/pinheiro-vargas/05.jpg",
+            "/assets/projects/pinheiro-vargas/06.jpg"
+        ]
     },
     "project-2": {
         "id": 2,
         "name": "Mestre Cilso",
-        "path": "/assets/projects/project-2.jpg",
-        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+        "date": "Ano 2023",
+        "tags": ["Identidade Visual", "Direção de Arte"],
+        "tags_formated": "Identidade Visual | Direção de Arte",
+        "url": "/trabalhos/mestre-cilso",
+        "path": "/assets/projects/mestre-cilso/thumbnail.jpg",
+        "text": [
+            "A herança familiar na 'Casa do Pote Mestre Cilso' é a essência do ateliê, originada com a paixão de Cilso Tibúrcio pelo trabalho com argila.",
+
+            "Após sua partida, Evelyn, sua filha, criou a marca em homenagem ao pai para, não apenas continuar seu legado produzindo e vendendo peças de argila cheias de significado, mas também compartilhar seu conhecimento através de cursos gratuitos sobre confecção de cerâmicas.",
+
+            "Essa tradição familiar vai além das peças arte, representando um compromisso com a preservação do artesanato e a celebração da história da cidade de Dourados/ Ms."
+        ],
+        "images": [
+            "/assets/projects/mestre-cilso/01.jpg",
+            "/assets/projects/mestre-cilso/02.jpg",
+            "/assets/projects/mestre-cilso/03.jpg",
+            "/assets/projects/mestre-cilso/04.jpg",
+            "/assets/projects/mestre-cilso/05.jpg",
+            "/assets/projects/mestre-cilso/06.jpg",
+            "/assets/projects/mestre-cilso/07.jpg",
+            "/assets/projects/mestre-cilso/08.jpg",
+            "/assets/projects/mestre-cilso/09.jpg",
+            "/assets/projects/mestre-cilso/10.jpg",
+            "/assets/projects/mestre-cilso/11.jpg",
+            "/assets/projects/mestre-cilso/12.jpg"
+        ]
     },
     "project-3": {
         "id": 3,
         "name": "A.A.A.M.U.P",
-        "path": "/assets/projects/project-3.jpg",
-        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+        "date": "Ano 2022",
+        "tags": ["Identidade Visual", "Direção de Arte", "Ilustração" ],
+        "tags_formated": "Identidade Visual | Direção de Arte | Ilustração",
+        "url": "/trabalhos/aaamup",
+        "path": "/assets/projects/aaamup/thumbnail.jpg",
+        "text": [
+            "Uma arara de penas escarlates que possuía a incomparável destreza nas mãos para cuidar de quem precisa e enfaixar os ferimentos dos seus adversários quando tais ousam desafia-la.",
+            "Pensando nessa dicotomia, elementos como penas e faixas foram acrescentados à identidade visual, além da utilização da cor vermelha."
+        ],
+        "images": [
+            "/assets/projects/aaamup/01.jpg",
+            "/assets/projects/aaamup/02.jpg",
+            "/assets/projects/aaamup/03.jpg",
+            "/assets/projects/aaamup/04.jpg",
+            "/assets/projects/aaamup/05.jpg",
+            "/assets/projects/aaamup/06.jpg",
+            "/assets/projects/aaamup/07.jpg"
+        ]
     },
     "project-4": {
         "id": 2,
         "name": "Instituto Deller",
-        "path": "/assets/projects/project-4.jpg",
-        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+        "date": "",
+        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ],
+        "tags_formated": "Identidade Visual | Direção de Arte | Logotipo",
+        "url": "/trabalhos/instituto-deller",
+        "path": "/assets/projects/instituto-deller/thumbnail.jpg",
+        "text": [
+            ""
+        ],
+        "images": [
+            ""
+        ]
     }
 }

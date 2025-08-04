@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import clsx from "clsx";
+import { Link } from "@tanstack/react-router";
 
 interface Project {
   path: string;
   name: string;
   tags: string[];
+  url: string;
 }
 
 interface ProjectCardProps {
@@ -20,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
   };
 
   return (
-    <div
+    <Link to={project.url}
       onClick={handleToggleClick}
       className={clsx(
         `group relative flex flex-col justify-end grow h-[25rem] rounded-2xl overflow-hidden`,
@@ -62,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
