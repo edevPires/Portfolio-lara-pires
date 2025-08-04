@@ -7,7 +7,6 @@ import Lara from '../assets/logo/lara.png';
 import { ChevronsDown } from 'lucide-react';
 import GradientButton from '../components/ui/gradient-button';
 import LogoRounded from '../assets/logo/logo_rounded.png';
-import Footer from '../components/ui/footer';
 
 import ProjectCard from '../components/ui/project-card';
 import projects from '../data/projects.json';
