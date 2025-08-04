@@ -10,9 +10,11 @@
 }
 
 @theme {
-  --font-primary: 'Bahnschrift', sans-serif;
-  --font-secondary: 'Altone', sans-serif;
-  --font-secondary-bold: 'Altone Bold', sans-serif;
+  --font-bahnchrift: 'Bahnschrift', sans-serif;
+  --font-altone: 'Altone', sans-serif;
+  --font-altone-bold: 'Altone Bold', sans-serif;
+  --font-mont-bold: 'Mont Bold', sans-serif;
+  --font-mont-extralight: 'Mont Extra Light', sans-serif;
 
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -42,7 +44,29 @@
     font-family: 'Bahnschrift';
     src: url('./assets/fonts/bahnschrift/BAHNSCHRIFT.TTF') format('truetype');
   }
-}
 
+  @font-face {
+    font-family: 'Mont Bold';
+    src: url('./assets/fonts/mont/MONT-HEAVYDEMO.OTF') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'Mont Extra Light';
+    src: url('./assets/fonts/mont/MONT-EXTRALIGHTDEMO.OTF') format('opentype');
+  }
+
+  @keyframes rotate-360 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-rotate-360 {
+    animation: rotate-360 30s linear infinite;
+  }
+}
 
 @import "tailwindcss";

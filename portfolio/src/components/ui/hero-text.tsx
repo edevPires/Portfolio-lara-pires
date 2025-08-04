@@ -7,7 +7,7 @@ interface HeroTextProps {
 }
 
 const HeroText: React.FC<HeroTextProps> = ({ className, label }) => (
-  <h1 className={clsx("font-secondary-bold font-extra text-8xl lg:text-9xl h-fit w-fit text-end", className)}>
+  <h1 className={clsx("font-altone-bold font-extra text-8xl lg:text-9xl h-fit w-fit text-end", className)}>
     {label}
   </h1>
 );

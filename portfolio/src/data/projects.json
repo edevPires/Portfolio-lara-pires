@@ -1,0 +1,26 @@
+{
+    "project-1": {
+        "id": 1,
+        "name": "Pinheiro Vargas",
+        "path": "/assets/projects/project-1.jpg",
+        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+    },
+    "project-2": {
+        "id": 2,
+        "name": "Mestre Cilso",
+        "path": "/assets/projects/project-2.jpg",
+        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+    },
+    "project-3": {
+        "id": 3,
+        "name": "A.A.A.M.U.P",
+        "path": "/assets/projects/project-3.jpg",
+        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+    },
+    "project-4": {
+        "id": 2,
+        "name": "Instituto Deller",
+        "path": "/assets/projects/project-4.jpg",
+        "tags": ["Identidade Visual", "Direção de Arte", "Logotipo" ]
+    }
+}
