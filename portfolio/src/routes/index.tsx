@@ -109,7 +109,7 @@ function RouteComponent() {
             <h1 className='w-fit'>Sobre </h1>
             <h1 className='relative w-fit ml-4'>
               mim
-              <img src={BotaoCerto} alt="Botão Certo"className='absolute left-1/2 -translate-x-1/2 top-1 w-4 lg:w-6 h-auto'/>
+              <img src={BotaoCerto} alt="Botão Certo"className='absolute left-1/2 -translate-x-1/2 top-[0.1rem] w-4 lg:w-6 h-auto'/>
             </h1>
           </div>
         </div>
