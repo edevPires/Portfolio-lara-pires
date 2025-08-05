@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
     <Link to={project.url}
       onClick={handleToggleClick}
       className={clsx(
-        `group relative flex flex-col justify-end grow h-[25rem] rounded-2xl overflow-hidden`,
+        `group relative flex flex-col justify-end grow h-[25rem] 2xl:h-[25rem] rounded-2xl overflow-hidden`,
         `hover:cursor-pointer`,
         className,
       )}
@@ -48,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
           isClicked && `opacity-100`, // Aplica a opacidade quando clicado
         )}
       >
-        <h1 className="text-2xl text-start text-primary font-mont-bold w-full">
+        <h1 className="text-3xl text-start text-primary font-mont-bold w-full">
           {project.name}
         </h1>
         <div className="flex gap-2 flex-wrap">

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { createFileRoute } from '@tanstack/react-router';
 import FullSection from '../components/layout/full-section';
 import ResponsiveSection from '../components/layout/responsive-section';
@@ -7,15 +8,31 @@ import Lara from '../assets/logo/lara.png';
 import { ChevronsDown } from 'lucide-react';
 import GradientButton from '../components/ui/gradient-button';
 import LogoRounded from '../assets/logo/logo_rounded.png';
+import BotaoCerto from '../assets/botao_certo.png';
 
 import ProjectCard from '../components/ui/project-card';
 import projects from '../data/projects.json';
+import { useState } from 'react';
+import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
 });
 
 function RouteComponent() {
+  useScrollToTop()
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <>
       <FullSection className='pt-30 lg:pt-20'>
@@ -49,13 +66,55 @@ function RouteComponent() {
         </div>
       </FullSection>
 
-
-
       <ResponsiveSection>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 px-5 sm:px-24 py-10 gap-4 sm:gap-3'>
+        <div className='grid grid-cols-1 xl:grid-cols-3 px-5 sm:px-42 py-10 gap-5 select-none'>
           {Object.values(projects).map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
+          <div
+            className='relative col-span-2 border border-secondary/10 rounded-2xl overflow-hidden bg-primary hidden xl:block'
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <h1 
+              className={clsx(
+                'absolute inset-0 flex items-center justify-center',
+                'font-mont-bold text-primary text-6xl z-[2]'
+              )}
+            >
+              Sua identidade <br />pode ser a próxima
+            </h1>
+            <div
+              className={clsx(
+                'absolute size-56 rounded-full pointer-events-none',
+                'bg-gradient-to-tr from-[#50acd8] via-[#b042d8] to-[#d73b98] blur-3xl z-[1] transition-opacity duration-200 ease',
+                isHovered ? "opacity-100" : "opacity-0"
+              )}
+              style={{
+                transform: `translate(-50%, -50%) translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+              }}
+            />
+          </div>
+        </div>
+      </ResponsiveSection>
+
+
+
+      <ResponsiveSection>
+        <div className={clsx(
+          "flex flex-col px-5 sm:px-42 py-10"
+        )}>
+          <div className='flex flex-nowrap text-secondary text-7xl lg:text-8xl font-altone-bold font-extralight'>
+            <h1 className='w-fit'>Sobre </h1>
+            <h1 className='relative w-fit ml-4 rounded-tl-sm
+  rounded-tr-2xl
+  rounded-br-full
+  rounded-bl-none'>
+              mim
+              <img src={BotaoCerto} alt="Botão Certo"className='absolute left-1/2 -translate-x-1/2 top-1 w-4 lg:w-6 h-auto'/>
+            </h1>
+          </div>
         </div>
       </ResponsiveSection>
     </>

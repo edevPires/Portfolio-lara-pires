@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({}) => {
     return (
-        <footer className='flex flex-col gap-8 bg-secondary px-5 py-18 sm:px-24'>
+        <footer className='flex flex-col gap-8 bg-secondary px-5 py-18 sm:px-42'>
             <div className='flex gap-5'>
                 <div className={clsx(
                     "flex justify-center items-center text-2xl size-14 rounded-full",
