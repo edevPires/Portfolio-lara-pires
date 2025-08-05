@@ -107,10 +107,7 @@ function RouteComponent() {
         )}>
           <div className='flex flex-nowrap text-secondary text-7xl lg:text-8xl font-altone-bold font-extralight'>
             <h1 className='w-fit'>Sobre </h1>
-            <h1 className='relative w-fit ml-4 rounded-tl-sm
-  rounded-tr-2xl
-  rounded-br-full
-  rounded-bl-none'>
+            <h1 className='relative w-fit ml-4'>
               mim
               <img src={BotaoCerto} alt="Botão Certo"className='absolute left-1/2 -translate-x-1/2 top-1 w-4 lg:w-6 h-auto'/>
             </h1>

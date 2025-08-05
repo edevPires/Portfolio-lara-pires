@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useEffect } from 'react'
 import Header from '../components/ui/header'
 import Sidebar from '../components/ui/sidebar'
 import { Outlet, createRootRoute } from '@tanstack/react-router'
