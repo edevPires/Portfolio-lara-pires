@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
     <Link to={project.url}
       onClick={handleToggleClick}
       className={clsx(
-        `group relative flex flex-col justify-end grow h-[25rem] 2xl:h-[25rem] rounded-2xl overflow-hidden`,
+        `group relative flex flex-col justify-end grow h-[25rem] 2xl:h-[26rem] rounded-2xl overflow-hidden`,
         `hover:cursor-pointer`,
         className,
       )}
@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
       <div
         className={clsx(
           `absolute inset-0 bg-cover bg-center`,
-          `transition-transform duration-500 ease-in-out`,
+          `transition-transform duration-300 linear`,
           `group-hover:scale-110`,
           isClicked && `scale-110`, // Aplica o zoom quando clicado
         )}
