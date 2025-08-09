@@ -1,9 +1,11 @@
 {
 	"dependencies": {
+		"@hookform/resolvers": "^5.2.1",
 		"clsx": "^2.1.1",
 		"express": "^5.1.0",
 		"lucide-react": "^0.534.0",
 		"path": "^0.12.7",
-		"react-hook-form": "^7.62.0"
+		"react-hook-form": "^7.62.0",
+		"zod": "^4.0.16"
 	}
 }
