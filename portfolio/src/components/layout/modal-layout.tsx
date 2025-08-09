@@ -34,7 +34,7 @@ const ModalLayout: FC<ModalLayoutProps> = ({ isOpen, onClose, children }) => {
       onClick={onClose}
     >
       <div
-        className="relative flex flex-col justify-center items-center rounded-lg p-4 sm:p-8 w-full max-w-full max-h-[95vh] overflow-y-auto lg:overflow-y-hidden"
+        className="relative flex flex-col justify-center items-center rounded-lg w-full max-w-full max-h-[95vh] overflow-y-auto lg:overflow-y-hidden"
         onClick={e => e.stopPropagation()}
       >
         {children}
