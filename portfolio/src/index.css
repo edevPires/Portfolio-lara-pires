@@ -3,6 +3,13 @@
   --secondary: #1b1b1b;
 }
 
+.no-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;        
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;                
+}
 /* opcional, para mudar tema dinamicamente */
 .dark {
   --primary: #1b1b1b;

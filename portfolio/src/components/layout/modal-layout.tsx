@@ -17,6 +17,12 @@ const ModalLayout: FC<ModalLayoutProps> = ({ isOpen, onClose, children }) => {
     if (isOpen) {
       setShow(true);
       setTimeout(() => setFadeClass('opacity-100'), 10); // fade in
+      // lock body scroll while modal is open
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
     } else {
       setFadeClass('opacity-0 pointer-events-none');
       timeoutRef.current = window.setTimeout(() => setShow(false), 300); // match duration
@@ -34,7 +40,7 @@ const ModalLayout: FC<ModalLayoutProps> = ({ isOpen, onClose, children }) => {
       onClick={onClose}
     >
       <div
-        className="relative flex flex-col justify-center items-center rounded-lg w-full max-w-full max-h-[95vh] overflow-y-auto lg:overflow-y-hidden"
+        className="relative flex flex-col justify-center items-center rounded-lg w-full max-w-full max-h-[95vh] overflow-y-auto no-scrollbar lg:overflow-y-hidden"
         onClick={e => e.stopPropagation()}
       >
         {children}
