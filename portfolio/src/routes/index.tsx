@@ -9,10 +9,12 @@ import { ChevronsDown } from 'lucide-react';
 import GradientButton from '../components/ui/gradient-button';
 import LogoRounded from '../assets/logo/logo_rounded.png';
 import BotaoCerto from '../assets/botao_certo.png';
+import ModalLayout from '../components/layout/modal-layout'
+import ContactForm from '../components/forms/contact-form'
 
 import ProjectCard from '../components/ui/project-card';
 import projects from '../data/projects.json';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 import SobreMim from '../assets/Sobre_mim_foto.png'
@@ -24,8 +26,24 @@ export const Route = createFileRoute('/')({
 function RouteComponent() {
   useScrollToTop()
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const open = () => setIsOpen(true);
+    window.addEventListener('open-contact', open);
+    return () => window.removeEventListener('open-contact', open);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -37,6 +55,9 @@ function RouteComponent() {
 
   return (
     <>
+      <ModalLayout isOpen={isOpen} onClose={handleCloseModal}>
+        <ContactForm />
+      </ModalLayout>
       <FullSection className='pt-30 lg:pt-20'>
         <div className='relative flex flex-col lg:flex-row items-center justify-center h-full gap-4 lg:gap-15 pb-25 lg:pb-0'>
           <div className='flex flex-row lg:flex-col items-end w-fit'>
@@ -103,7 +124,7 @@ function RouteComponent() {
 
 
 
-      <ResponsiveSection>
+      <ResponsiveSection id="sobre">
         <div className={clsx(
           "flex flex-col px-5 2xl:px-64 py-20"
         )}>
@@ -131,12 +152,13 @@ function RouteComponent() {
           <div className='relative flex justify-center grow mt-20 mb-10'>
             <GradientButton 
               label='Entre em contato' 
+              onClick={handleOpenModal}
               className={clsx(
                 'py-4 px-12',
                 'hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out'
               )}
             />
-            <img src={LogoRounded} alt='Lara' className='absolute right-0 top-1/2 -translate-y-1/2 w-20 lg:w-26 h-auto pl-1 z-[1]' />
+            <img src={LogoRounded} alt='Lara' className='absolute hidden lg:block right-0 top-1/2 -translate-y-1/2 w-20 lg:w-26 h-auto pl-1 z-[1]' />
           </div>
         </div>
       </ResponsiveSection>

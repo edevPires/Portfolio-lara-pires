@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from '../../assets/logo/logo.png';
 import HeaderTab from './header-tab';
 import { Link } from '@tanstack/react-router';
@@ -18,6 +18,44 @@ const Header: React.FC<HeaderProps> = ({ setIsOpen }) => {
     const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     const [activeIdx, setActiveIdx] = useState<number | null>(null);
+    const [isAtTop, setIsAtTop] = useState(true);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setIsAtTop(window.scrollY === 0);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    const handleTabClick = (label: string) => (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        const key = label.toLowerCase();
+        if (key === 'sobre') {
+            e.preventDefault();
+            const el = document.getElementById('sobre');
+            if (el) {
+                const headerOffset = 80; // fixed header height
+                const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+            return;
+        }
+        if (key === 'entre em contato') {
+            e.preventDefault();
+            window.dispatchEvent(new Event('open-contact'));
+            return;
+        }
+        if (key === 'trabalhos') {
+            e.preventDefault();
+            // Future: navigate to '/trabalhos'
+            return;
+        }
+        if (key === 'quero mais') {
+            e.preventDefault();
+            return;
+        }
+    };
 
     const handleMouseEnter = (idx: number) => {
         const tab = tabRefs.current[idx];
@@ -39,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({ setIsOpen }) => {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-dvw h-20 bg-primary shadow-md text-secondary z-[3]">
+        <header className={`fixed top-0 left-0 w-dvw h-20 bg-primary text-secondary z-[3] transition-all duration-300 ${isAtTop ? '' : 'shadow-lg'}`}>
             <nav className="relative flex h-full items-center justify-between lg:justify-center gap-14 lg:gap-20 px-8">
                 <Link to="/">
                     <img src={logo} alt="Logo LP" className="h-12 w-auto" />
@@ -69,6 +107,7 @@ const Header: React.FC<HeaderProps> = ({ setIsOpen }) => {
                             href={tab.href}
                             label={tab.label}
                             active={activeIdx === idx}
+                            onClick={handleTabClick(tab.label)}
                         />
                     </div>
                 ))}

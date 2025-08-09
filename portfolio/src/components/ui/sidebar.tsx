@@ -13,6 +13,28 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({isOpen, setIsOpen}) => {
+    const handleTabClick = (label: string) => (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        const key = label.toLowerCase();
+        if (key === 'sobre') {
+            e.preventDefault();
+            const el = document.getElementById('sobre');
+            if (el) {
+                const headerOffset = 80;
+                const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        } else if (key === 'entre em contato') {
+            e.preventDefault();
+            window.dispatchEvent(new Event('open-contact'));
+        } else if (key === 'trabalhos') {
+            e.preventDefault();
+            // Future: navigate to '/trabalhos'
+        } else if (key === 'quero mais') {
+            e.preventDefault();
+        }
+        setIsOpen(false);
+    };
+
     return (
         <aside className={clsx(
             `fixed sm:hidden left-0 top-0 w-dvw h-dvh bg-secondary -translate-x-full transition-transform duration-300 ease-in-out z-[4]`,
@@ -30,11 +52,12 @@ const Sidebar: React.FC<SidebarProps> = ({isOpen, setIsOpen}) => {
                 </div>
 
                 {Tabs.map((tab) => (
-                    <SidebarTab key={tab.href} href={tab.href} label={tab.label} />
+                    <SidebarTab key={tab.href} href={tab.href} label={tab.label} onClick={handleTabClick(tab.label)} />
                 ))}
 
                 <GradientButton 
                     label='Quero mais'
+                    onClick={() => setIsOpen(false)}
                     className='w-full py-4'
                 />
             </nav>
