@@ -40,7 +40,7 @@ const ContactForm: React.FC = () => {
     return (
         <form 
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-6 lg:w-[75rem] py-5 lg:px-40 flex-grow overflow-y-auto no-scrollbar"
+            className="flex flex-col gap-6 lg:w-[75rem] py-5 lg:py-10 lg:px-40 flex-grow overflow-y-auto lg:overflow-visible no-scrollbar"
         >
             <div className="flex flex-col lg:flex-row gap-4">
                 <InputForm name="name" label="Nome *" errors={errors} register={register} /> 
