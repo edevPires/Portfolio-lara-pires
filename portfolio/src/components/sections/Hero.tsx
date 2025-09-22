@@ -2,7 +2,7 @@ import React from 'react';
 import FullSection from '../layout/full-section';
 import HeroText from '../ui/hero-text';
 import HeroTextSmall from '../ui/hero-text-small';
-import Tagline from '../../assets/logo/Tagline.png';
+import Tagline from '../../assets/logo/tagline.png';
 import LogoBranca from '../../assets/logo/logo_branca.png';
 import ID from '../../assets/logo/id.png';
 import BgImage from '../../assets/bg.jpg';
