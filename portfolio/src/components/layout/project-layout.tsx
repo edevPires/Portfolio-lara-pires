@@ -45,7 +45,7 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({project}) => {
             </div>
             <div className='relative flex flex-col gap-8'>
                 {project.images.map((image) => (
-                    <img src={image} alt="01"  className='w-full h-auto rounded-xl shadow-secondary/30 shadow-lg' key={image}/>
+                    <img src={image} alt="01"  className='w-full h-auto rounded-xl' key={image}/>
                 ))}
                 <img src={LogoRounded} alt='Lara' className='absolute right-0 bottom-0 w-24 lg:w-32 h-auto pl-1 z-[1] transform translate-y-1/2' />
             </div>

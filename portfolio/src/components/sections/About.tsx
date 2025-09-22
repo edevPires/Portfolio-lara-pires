@@ -27,21 +27,39 @@ const About: React.FC<AboutProps> = ({ onOpenContact }) => {
             />
           </h1>
         </div>
-        <div className='flex flex-col lg:flex-row gap-10'>
+        <div className='flex flex-col lg:flex-row lg:items-start gap-10'>
           <img
             src={SobreMim}
             alt="Sobre Mim"
-            className='w-full md:w-1/3 h-auto'
+            className='w-full lg:w-auto lg:max-w-sm h-auto object-contain'
           />
-          <div className='flex flex-col grow gap-5 text-xl text-justify font-bahnchrift font-extralight leading-7'>
+          <div className='flex flex-col grow gap-5 text-secondary text-xl text-justify font-bahnchrift font-extralight leading-7'>
             <span>
-              Tenho 5 anos de experiência profissional em Design. Atualmente trabalho como Diretora de Arte freelance, focando principalmente na expansão constante da minha criatividade.
+              Diretora de Arte e Designer Visual com 7 anos de experiência, dedicada a criar soluções que unem estética, propósito e funcionalidade.
             </span>
             <span>
-              Em 2023 ganhei o concurso  "Mestre das Marcas", o que me permitiu refletir sobre a qualidade do meu trabalho.
+              Produtora Cultural à frente do projeto "Montando Fábulas", uma iniciativa que usa jogos digitais para incentivar crianças a descobrir o prazer da leitura.
             </span>
             <span>
-              Meu maior diferencial é o conhecimento nos diversos ramos artísticos, uma vez que entendo de modelagem 3D, motion design, fotografia, ilustração (digital/manual), programação web e outros, por já ter realizado trabalhos nessas áreas. Assim, tenho maior facilidade para comunicação em equipe, mesmo esta sendo multidisciplinar. Além disso, essa gama de repertório permite que eu me inspire nos diversos campos artísticos mencionados e proporcione um produto único para meus clientes.
+              Minha trajetória profissional é validada por projetos com clientes como Agetran e o Instituto Federal de Educação, e pelo prêmio no desafio Mestre das Marcas em 2023. Atualmente, com uma base em Design Gráfico, aprofundo meus conhecimentos em Design Visual na UFRGS, uma das instituições mais renomadas da área.
+            </span>
+            <span>
+              Acredito que cada projeto é um quebra-cabeça único. Meu grande diferencial é ter uma abordagem multidisciplinar que conecta minha paixão pelas artes manuais às mais modernas ferramentas digitais, me permitindo encontrar as peças certas para dar vida a cada ideia. É essa união que me permite encontrar soluções únicas e dar vida a cada ideia. Minha caixa de ferramentas para isso inclui:
+            </span>
+            <span className='flex items-center gap-3'>
+              <span className='size-2 rounded-full bg-secondary'></span>
+              Identidade Visual e Direção de Arte
+            </span>
+            <span className='flex items-center gap-3'>
+              <span className='size-2 rounded-full bg-secondary'></span>
+              lustração (Digital e Manual)
+            </span>
+            <span className='flex items-center gap-3'>
+              <span className='size-2 rounded-full bg-secondary'></span>
+              Modelagem 3D e Motion Design
+            </span>
+            <span>
+              Estou sempre aberta a novos desafios e colaborações. Vamos conversar sobre como podemos tirar suas ideias do papel!
             </span>
           </div>
         </div>

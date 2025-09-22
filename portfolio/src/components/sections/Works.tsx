@@ -39,7 +39,7 @@ const Works: React.FC = () => {
           <div
             className={clsx(
               'absolute size-56 rounded-full pointer-events-none',
-              'bg-gradient-to-tr from-[#50acd8] via-[#b042d8] to-[#d73b98] blur-3xl z-[1] transition-opacity duration-200 ease',
+              'bg-gradient-to-tr from-[#FB26B4] via-[#F77746] to-[#E6B300] blur-3xl z-[1] transition-opacity duration-200 ease',
               isHovered ? "opacity-100" : "opacity-0"
             )}
             style={{

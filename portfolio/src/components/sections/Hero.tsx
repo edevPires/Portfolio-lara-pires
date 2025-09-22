@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
             className='absolute bottom-0 left-0t w-[15%] h-auto'
           />
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col lg:min-w-[35rem] lg:min-h-[19rem]'>
           <HeroText label='Lara' delay={0}/>
           <HeroText label='Pires' delay={500}/>
           <div className='flex justify-end'>

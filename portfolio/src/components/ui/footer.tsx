@@ -37,24 +37,24 @@ const Footer: React.FC<FooterProps> = ({}) => {
             <div className='flex gap-5'>
                 <div className={clsx(
                     "flex justify-center items-center text-2xl size-14 rounded-full",
-                    "bg-gradient-to-tr from-[#50acd8] via-[#b042d8] to-[#d73b98]",
-                    "transition-all duration-200 hover:from-[#d73b98] hover:via-[#b042d8] hover:to-[#50acd8] hover:cursor-pointer hover:scale-105"
+                    "bg-gradient-to-tr from-[#FB26B4] via-[#F77746] to-[#E6B300]",
+                    "transition-all duration-200 hover:from-[#E6B300] hover:via-[#F77746] hover:to-[#FB26B4] hover:cursor-pointer hover:scale-105"
                 )}>
-                    <FaBehance className='text-primary'/>
+                    <FaBehance className='text-secondary'/>
                 </div>
                 <div className={clsx(
                     "flex justify-center items-center text-2xl size-14 rounded-full",
-                    "bg-gradient-to-tr from-[#50acd8] via-[#b042d8] to-[#d73b98]",
-                    "transition-all duration-200 hover:from-[#d73b98] hover:via-[#b042d8] hover:to-[#50acd8] hover:cursor-pointer hover:scale-105"
+                    "bg-gradient-to-tr from-[#FB26B4] via-[#F77746] to-[#E6B300]",
+                    "transition-all duration-200 hover:from-[#E6B300] hover:via-[#F77746] hover:to-[#FB26B4] hover:cursor-pointer hover:scale-105"
                 )}>
-                    <FaInstagram className='text-primary'/>
+                    <FaInstagram className='text-secondary'/>
                 </div>
                 <div className={clsx(
                     "flex justify-center items-center text-2xl size-14 rounded-full",
-                    "bg-gradient-to-tr from-[#50acd8] via-[#b042d8] to-[#d73b98]",
-                    "transition-all duration-200 hover:from-[#d73b98] hover:via-[#b042d8] hover:to-[#50acd8] hover:cursor-pointer hover:scale-105"
+                    "bg-gradient-to-tr from-[#FB26B4] via-[#F77746] to-[#E6B300]",
+                    "transition-all duration-200 hover:from-[#E6B300] hover:via-[#F77746] hover:to-[#FB26B4] hover:cursor-pointer hover:scale-105"
                 )}>
-                    <FaArtstation className='text-primary'/>
+                    <FaArtstation className='text-secondary'/>
                 </div>
             </div>
             <div className='flex flex-col lg:flex-row'>
