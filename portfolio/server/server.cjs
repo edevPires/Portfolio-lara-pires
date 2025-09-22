@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-const emailRouter = require('./src/modules/email/email.routes');
+const emailRouter = require('./src/modules/email/email.routes.cjs');
 
 const app = express();
 const PORT = process.env.PORT || 3001;

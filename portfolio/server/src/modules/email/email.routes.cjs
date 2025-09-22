@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.post('/send', (req, res) => {
     console.log(req.body);
-    res.send.json({
+    res.json({
         message: 'Email enviado com sucesso!',
     });
 });
