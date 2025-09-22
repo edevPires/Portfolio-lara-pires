@@ -48,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
           isClicked && `opacity-100`, // Aplica a opacidade quando clicado
         )}
       >
-        <h1 className="text-3xl text-start text-primary font-mont-bold w-full">
+        <h1 className="text-3xl text-start text-secondary font-mont-bold w-full">
           {project.name}
         </h1>
         <div className="flex gap-2 flex-wrap">
@@ -56,7 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ className, project }) => {
             <div
               key={tag}
               className={clsx(
-                `flex px-4 py-1 justify-center items-center text-primary text-md font-mont-extralight border border-primary rounded-full`,
+                `flex px-4 py-1 justify-center items-center text-secondary text-md font-mont-extralight border border-secondary rounded-full`,
               )}
             >
               {tag}

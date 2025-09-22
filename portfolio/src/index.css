@@ -1,6 +1,6 @@
 :root {
   --primary: #f0f0f0;
-  --secondary: #1b1b1b;
+  --secondary: #373C42;
 }
 
 .no-scrollbar {
@@ -12,8 +12,8 @@
 }
 /* opcional, para mudar tema dinamicamente */
 .dark {
-  --primary: #1b1b1b;
-  --secondary: #f0f0f0;
+  --primary: #f0f0f0;
+  --secondary: #373C42;
 }
 
 @theme {
@@ -22,9 +22,10 @@
   --font-altone-bold: 'Altone Bold', sans-serif;
   --font-mont-bold: 'Mont Bold', sans-serif;
   --font-mont-extralight: 'Mont Extra Light', sans-serif;
+  --font-mortend-bold: 'Mortend Bold', sans-serif;
 
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
+  --color-primary: var(--secondary);
+  --color-secondary: var(--primary);
 
   --breakpoint-xs: 30rem;   /* 480px */
   --breakpoint-sm: 40rem;   /* 640px */
@@ -60,6 +61,11 @@
   @font-face {
     font-family: 'Mont Extra Light';
     src: url('./assets/fonts/mont/MONT-EXTRALIGHTDEMO.OTF') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'Mortend Bold';
+    src: url('./assets/fonts/mortend/Mortend-Bold.otf') format('opentype');
   }
 
   @keyframes rotate-360 {

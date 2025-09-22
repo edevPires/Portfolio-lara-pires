@@ -26,15 +26,31 @@ const ContactForm: React.FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(schema),
     });
+
     const options = [
         { value: "instagram", label: "Instagram" },
         { value: "facebook", label: "Facebook" },
         { value: "google", label: "Google" },
         { value: "indicação", label: "Indicação" },
         { value: "outro", label: "Outro" },
-    ];    
+    ]; 
+
     const onSubmit = (data: any) => {
         console.log(data);
+        fetch("http://localhost:3001/api/email/send", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
     };
 
     return (

@@ -1,6 +1,6 @@
 [
-    { "href": "/", "label": "sobre" },
-    { "href": "/", "label": "trabalhos" },
-    { "href": "/", "label": "entre em contato" },
-    { "href": "/", "label": "quero mais" }
-  ]
+  { "href": "/", "label": "Trabalhos" },
+  { "href": "/", "label": "Contato" },
+  { "href": "/", "label": "Sobre" },
+  { "href": "/", "label": "Mais" }
+]

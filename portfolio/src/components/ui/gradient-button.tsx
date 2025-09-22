@@ -16,7 +16,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({label, className, childr
         <button
             type={type}
             className={clsx(
-                'flex justify-center items-center font-bahnchrift text-primary text-2xl rounded-full z-[1]',
+                'flex justify-center items-center font-bahnchrift text-secondary text-2xl rounded-full z-[1]',
                 'bg-gradient-to-tr from-[#50acd8] via-[#b042d8] to-[#d73b98]',
                 `${className}`
             )}
