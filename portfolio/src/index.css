@@ -1,6 +1,6 @@
 :root {
   --primary: #f0f0f0;
-  --secondary: #373C42;
+  --secondary: #202020;
 }
 
 .no-scrollbar {
@@ -79,6 +79,64 @@
 
   .animate-rotate-360 {
     animation: rotate-360 30s linear infinite;
+  }
+
+  @keyframes circle-split-1 {
+    0%, 25% {
+      transform: translate(-50%, -50%);
+    }
+    40% {
+      transform: translate(calc(-50% - 60px), -50%);
+    }
+    100% {
+      transform: translate(calc(-50% - 400px), -50%);
+    }
+  }
+
+  @keyframes circle-split-2 {
+    0%, 25% {
+      transform: translate(-50%, -50%);
+    }
+    40% {
+      transform: translate(calc(-50% + 60px), -50%);
+    }
+    100% {
+      transform: translate(calc(-50% + 400px), -50%);
+    }
+  }
+
+  @keyframes circle-split-3 {
+    0%, 25% {
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .animate-circle-split-1 {
+    animation: circle-split-1 4s ease-in-out forwards;
+  }
+
+  .animate-circle-split-2 {
+    animation: circle-split-2 4s ease-in-out forwards;
+  }
+
+  .animate-circle-split-3 {
+    animation: circle-split-3 4s ease-in-out forwards;
+  }
+
+  @keyframes text-fade-in {
+    0%, 70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-text-fade-in {
+    animation: text-fade-in 4s ease-in-out forwards;
   }
 }
 
