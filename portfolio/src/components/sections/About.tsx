@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import ResponsiveSection from '../layout/responsive-section';
 import GradientButton from '../ui/gradient-button';
-import LogoRounded from '../../assets/logo/logo_rounded.png';
 import SobreMim from '../../assets/foto_sobre_min.jpg';
 import Tagline from '../../assets/logo/tagline.png'
 
