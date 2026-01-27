@@ -70,18 +70,18 @@ const InputSelectForm: React.FC<InputSelectFormProps> = ({
       <button
         type="button"
         className={clsx(
-          "peer bg-primary text-2xl font-bahnchrift rounded-3xl border border-purple-500 px-5 py-4 flex items-center justify-between focus:outline-none transition-all",
-          open && "ring-2 ring-purple-400"
+          "peer bg-primary text-2xl font-bahnchrift rounded-3xl border border-orange-400 px-5 py-4 flex items-center justify-between focus:outline-none transition-all",
+          open && "ring-2 ring-orange-400"
         )}
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="listbox"
         aria-expanded={open}
         tabIndex={0}
       >
-        <span className={clsx(selected ? "text-secondary" : "text-secondary-500")}>{
+        <span className="text-white">{
           options.find(o => o.value === selected)?.label || "Selecione..."
         }</span>
-        <svg className={clsx("ml-2 w-5 h-5 transition-transform", open && "rotate-180")}
+        <svg className={clsx("ml-2 w-5 h-5 transition-transform text-orange-400")}
           fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
@@ -90,7 +90,7 @@ const InputSelectForm: React.FC<InputSelectFormProps> = ({
       <label
         htmlFor={name}
         className={clsx(
-          "pointer-events-none rounded-lg absolute left-4 transition-all bg-primary px-2 text-secondary-500 font-bahnchrift text-purple-500 text-lg",
+          "pointer-events-none rounded-lg absolute left-4 transition-all bg-primary px-2 text-secondary-500 font-bahnchrift text-orange-400 text-lg",
           selected || open ? "text-lg -top-3 shadow-md" : "text-base top-1/2 -translate-y-1/2"
         )}
       >
@@ -99,7 +99,7 @@ const InputSelectForm: React.FC<InputSelectFormProps> = ({
       
       <ul
         className={clsx(
-          "absolute z-10 left-0 top-full w-full bg-primary border border-purple-500 rounded-2xl shadow-lg overflow-hidden transition-all duration-200",
+          "absolute z-10 left-0 top-full w-full bg-primary border border-orange-400 rounded-2xl shadow-lg overflow-hidden transition-all duration-200",
           open ? "max-h-60 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95 pointer-events-none"
         )}
         role="listbox"
@@ -108,8 +108,8 @@ const InputSelectForm: React.FC<InputSelectFormProps> = ({
           <li
             key={option.value}
             className={clsx(
-              "px-4 py-2 cursor-pointer hover:bg-purple-100 text-lg font-bahnchrift transition-colors",
-              selected === option.value && "bg-purple-100 text-secondary"
+              "px-4 py-2 cursor-pointer hover:bg-orange-100 text-lg font-bahnchrift transition-colors text-white",
+              selected === option.value && "bg-orange-100 text-white"
             )}
             onClick={() => handleSelect(option)}
             role="option"

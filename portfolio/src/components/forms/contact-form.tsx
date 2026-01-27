@@ -15,7 +15,6 @@ const schema = z
     message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres"),
     telefone: z.string().optional(),
     empresa: z.string().optional(),
-    "site-empresa": z.string().optional(),
     cargo: z.string().optional(),
     "cidade-uf": z.string().optional(),
     "meio-contato": z.string().optional(),
@@ -54,10 +53,15 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <form 
+        <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-6 lg:w-[75rem] py-5 lg:py-10 lg:px-40 flex-grow overflow-y-auto lg:overflow-visible no-scrollbar"
         >
+            <div className="text-center mb-4">
+                <h2 className="text-lg lg:text-xl font-bahnchrift text-secondary">
+                    Vamos conversar? Solicite um orçamento ou compartilhe sua ideia comigo!
+                </h2>
+            </div>
             <div className="flex flex-col lg:flex-row gap-4">
                 <InputForm name="name" label="Nome *" errors={errors} register={register} /> 
                 <InputPhoneForm name="telefone" label="Telefone" errors={errors} register={register} /> 
@@ -67,12 +71,8 @@ const ContactForm: React.FC = () => {
                 <InputSelectForm name="meio-contato" label="Como me encontrou?" register={register} options={options} />
             </div>
             <div className="flex flex-col lg:flex-row gap-4">
-                <InputForm name="empresa" label="Empresa" register={register} /> 
-                <InputForm name="site-empresa" label="Site da empresa" register={register} /> 
-            </div>
-            <div className="flex flex-col lg:flex-row gap-4">
-                <InputForm name="cargo" label="Cargo" register={register} /> 
-                <InputForm name="cidade-uf" label="Cidade/UF" register={register} /> 
+                <InputForm name="cidade-uf" label="Cidade/UF" register={register} />
+                <InputForm name="empresa" label="Empresa/ Seu cargo" register={register} />
             </div>
             <div>
                 <InputTextAreaForm name="message" label="Mensagem *" errors={errors} register={register} />

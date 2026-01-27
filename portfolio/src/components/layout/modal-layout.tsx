@@ -36,7 +36,7 @@ const ModalLayout: FC<ModalLayoutProps> = ({ isOpen, onClose, children }) => {
 
   return ReactDOM.createPortal(
     <div
-      className={`transition-opacity duration-300 ease-in-out ${fadeClass} fixed inset-0 bg-[#000000]/80 flex flex-col justify-center items-center z-[1000] overflow-hidden`}
+      className={`transition-opacity duration-300 ease-in-out ${fadeClass} fixed inset-0 bg-[#000000]/90 flex flex-col justify-center items-center z-[1000] overflow-hidden`}
       onClick={onClose}
     >
       <div

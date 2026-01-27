@@ -77,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({ setIsOpen }) => {
     };
 
     return (
-        <header className={`fixed top-0 left-0 w-dvw h-20 text-secondary z-[3] transition-all duration-300 ${isAtTop ? '' : 'shadow-lg shadow-secondary/5'} bg-gradient-to-b from-transparent to-secondary/10 backdrop-blur-sm`}>
+        <header className={`fixed top-0 left-0 w-dvw h-20 text-secondary z-50 transition-all duration-300 ${isAtTop ? '' : 'shadow-lg shadow-secondary/5'} bg-gradient-to-b from-transparent to-secondary/10 backdrop-blur-sm`}>
             <nav className="relative flex h-full items-center justify-between lg:justify-center gap-14 lg:gap-20 px-8">
                 <Link to="/">
                     <img src={logo} alt="Logo LP" className="h-20 w-auto" />
