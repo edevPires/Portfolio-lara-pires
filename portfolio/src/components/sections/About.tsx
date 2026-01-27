@@ -43,13 +43,15 @@ const About: React.FC<AboutProps> = ({ onOpenContact }) => {
           <h1 className='w-fit'>Sobre mim</h1>
         </div>
         <div className='flex flex-col lg:flex-row lg:items-start gap-10'>
-          <div className='relative'>
-            <img
+          <div className='relative px-6'>
+            <div className='relative'>
+              <img  
               src={SobreMim}
               alt="Sobre Mim"
-              className='w-full lg:w-auto lg:max-w-xs h-auto object-contain rounded-4xl'
-            />
-            <img src={Tagline} alt="Tagline" className='size-sm absolute bottom-[5%] left-0 w-[45%] h-auto transform -translate-x-1/2 animate-rotate-360'/>
+              className='w-full max-w-sm lg:w-auto lg:max-w-xs h-auto object-contain rounded-4xl'
+              />
+              <img src={Tagline} alt="Tagline" className='size-sm absolute bottom-[5%] left-0 w-[45%] h-auto transform -translate-x-1/2 animate-rotate-360'/>
+            </div>
           </div>
 
           <div className='flex flex-col grow gap-5 text-secondary text-xl text-justify font-bahnchrift font-extralight leading-7'>

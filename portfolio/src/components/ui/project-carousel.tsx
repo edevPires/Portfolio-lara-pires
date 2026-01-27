@@ -56,7 +56,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, className }
   return (
     <div className={clsx('w-full', className)}>
       {/* Carousel Container */}
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="carousel-fade overflow-hidden" ref={emblaRef}>
         <div className="flex gap-5 -ml-5">
           {projects.map((project) => (
             <div
