@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
         }
     };
     return (
-        <footer className='flex flex-col gap-8 bg-secondary px-5 py-18 sm:px-42'>
+        <footer className='flex flex-col gap-8 bg-black/20 px-5 py-18 sm:px-42'>
 
             <div className='flex gap-5'>
                 <div className={clsx(
@@ -59,16 +59,16 @@ const Footer: React.FC<FooterProps> = ({}) => {
             </div>
             <div className='flex flex-col lg:flex-row'>
                 <div className='flex flex-col gap-2'>
-                    <Link className='font-altone-bold text-primary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"}>
+                    <Link className='font-altone-bold text-secondary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"}>
                         Home
                     </Link>
-                    <Link className='font-bahnchrift text-primary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"} onClick={handleClick('trabalhos')}>
+                    <Link className='font-bahnchrift text-secondary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"} onClick={handleClick('trabalhos')}>
                         trabalhos
                     </Link>
-                    <Link className='font-bahnchrift text-primary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"} onClick={handleClick('sobre')}>
+                    <Link className='font-bahnchrift text-secondary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"} onClick={handleClick('sobre')}>
                         sobre
                     </Link>
-                    <Link className='font-bahnchrift text-primary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"} onClick={handleClick('entre em contato')}>
+                    <Link className='font-bahnchrift text-secondary text-xl transition-all duration-200 hover:scale-105 w-fit' to={"/"} onClick={handleClick('entre em contato')}>
                         entre em contato
                     </Link>
                 </div>

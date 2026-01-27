@@ -138,6 +138,74 @@
   .animate-text-fade-in {
     animation: text-fade-in 4s ease-in-out forwards;
   }
+
+  /* Mobile Triangle Layout Animations */
+  @media (max-width: 1024px) {
+    @keyframes circle-split-1-mobile {
+      /* AZUL - Topo */
+      0%, 25% {
+        transform: translate(-50%, -50%);
+      }
+      40% {
+        transform: translate(-50%, calc(-50% - 8px));
+      }
+      100% {
+        transform: translate(-50%, calc(-50% - 20px));
+      }
+    }
+
+    @keyframes circle-split-2-mobile {
+      /* ROSA - Inferior Direita */
+      0%, 25% {
+        transform: translate(-50%, -50%);
+      }
+      40% {
+        transform: translate(calc(-50% + 8px), calc(-50% + 5px));
+      }
+      100% {
+        transform: translate(calc(-50% + 24px), calc(-50% + 16px));
+      }
+    }
+
+    @keyframes circle-split-3-mobile {
+      /* AMARELO - Inferior Esquerda */
+      0%, 25% {
+        transform: translate(-50%, -50%);
+      }
+      40% {
+        transform: translate(calc(-50% - 8px), calc(-50% + 5px));
+      }
+      100% {
+        transform: translate(calc(-50% - 24px), calc(-50% + 16px));
+      }
+    }
+
+    .animate-circle-split-1 {
+      animation: circle-split-1-mobile 4s ease-in-out forwards;
+    }
+
+    .animate-circle-split-2 {
+      animation: circle-split-2-mobile 4s ease-in-out forwards;
+    }
+
+    .animate-circle-split-3 {
+      animation: circle-split-3-mobile 4s ease-in-out forwards;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .animate-circle-split-1 {
+      animation: circle-split-1 4s ease-in-out forwards;
+    }
+
+    .animate-circle-split-2 {
+      animation: circle-split-2 4s ease-in-out forwards;
+    }
+
+    .animate-circle-split-3 {
+      animation: circle-split-3 4s ease-in-out forwards;
+    }
+  }
 }
 
 @import "tailwindcss";
