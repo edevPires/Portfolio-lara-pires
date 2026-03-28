@@ -8,7 +8,7 @@ interface FullSectionProps {
 }
 
 const FullSection: React.FC<FullSectionProps> = ({ children, className }) => (
-  <section className={clsx(`h-dvh ${className}`)}>
+  <section className={clsx(`h-[105dvh] ${className}`)}>
 	  {children}
   </section>
 );

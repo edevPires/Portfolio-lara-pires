@@ -1,11 +1,8 @@
 const express = require('express');
+const { sendEmail } = require('./email.controller.cjs');
+
 const router = express.Router();
 
-router.post('/send', (req, res) => {
-    console.log(req.body);
-    res.json({
-        message: 'Email enviado com sucesso!',
-    });
-});
+router.post('/send', sendEmail);
 
 module.exports = router;

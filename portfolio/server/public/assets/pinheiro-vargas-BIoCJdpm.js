@@ -1,1 +1,0 @@
-import{u as t,j as o}from"./index-CB3rfeui.js";import{R as e,p as s}from"./logo_rounded-2lA3bFRn.js";import{P as p}from"./project-layout-BIw1_nhd.js";const a=function(){return t(),o.jsx(e,{className:"pt-32",children:o.jsx(p,{project:s["project-1"]})})};export{a as component};

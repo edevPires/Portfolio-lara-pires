@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import LogoRounded from "../../assets/logo/logo_rounded.png"
 import GradientButton from "../ui/gradient-button";
 
 interface Project {
@@ -47,7 +46,6 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({project}) => {
                 {project.images.map((image) => (
                     <img src={image} alt="01"  className='w-full h-auto rounded-xl' key={image}/>
                 ))}
-                <img src={LogoRounded} alt='Lara' className='absolute right-0 bottom-0 w-24 lg:w-32 h-auto pl-1 z-[1] transform translate-y-1/2' />
             </div>
             <div className='flex justify-center my-20'>
                 <GradientButton label='Veja Sua Marca' className='px-10 py-3'/>

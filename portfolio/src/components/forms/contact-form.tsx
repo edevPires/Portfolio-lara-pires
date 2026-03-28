@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import InputForm from "../ui/input-form";
 import InputSelectForm from "../ui/input-select-form";
@@ -22,9 +22,15 @@ const schema = z
   .passthrough();
 
 const ContactForm: React.FC = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: zodResolver(schema),
     });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<{
+        type: 'success' | 'error' | null;
+        message: string;
+    }>({ type: null, message: '' });
 
     const options = [
         { value: "instagram", label: "Instagram" },
@@ -34,22 +40,42 @@ const ContactForm: React.FC = () => {
         { value: "outro", label: "Outro" },
     ]; 
 
-    const onSubmit = (data: any) => {
-        console.log(data);
-        fetch("http://localhost:3001/api/email/send", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+    const onSubmit = async (data: any) => {
+        setIsSubmitting(true);
+        setSubmitStatus({ type: null, message: '' });
+
+        try {
+            const response = await fetch("http://localhost:3001/api/email/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                setSubmitStatus({
+                    type: 'success',
+                    message: result.message || 'Mensagem enviada com sucesso!',
+                });
+                reset();
+            } else {
+                setSubmitStatus({
+                    type: 'error',
+                    message: result.message || 'Erro ao enviar mensagem.',
+                });
+            }
+        } catch (error) {
+            console.error('Erro ao enviar:', error);
+            setSubmitStatus({
+                type: 'error',
+                message: 'Erro de conexão. Tente novamente.',
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -77,8 +103,25 @@ const ContactForm: React.FC = () => {
             <div>
                 <InputTextAreaForm name="message" label="Mensagem *" errors={errors} register={register} />
             </div>
+            {submitStatus.type && (
+                <div className={`text-center p-4 rounded-2xl font-bahnchrift ${
+                    submitStatus.type === 'success'
+                        ? 'bg-green-500/20 text-green-400 border border-green-500'
+                        : 'bg-red-500/20 text-red-400 border border-red-500'
+                }`}>
+                    {submitStatus.message}
+                </div>
+            )}
             <div className="flex justify-center">
-                <GradientButton type="submit" label="Enviar" className="py-3 px-15 cursor-pointer hover:opacity-90 transition-all"/>
+                <GradientButton
+                    type="submit"
+                    label={isSubmitting ? "Enviando..." : "Enviar"}
+                    className={`py-3 px-15 cursor-pointer transition-all ${
+                        isSubmitting
+                            ? 'opacity-50 cursor-not-allowed pointer-events-none'
+                            : 'hover:opacity-90'
+                    }`}
+                />
             </div>
         </form>
     );

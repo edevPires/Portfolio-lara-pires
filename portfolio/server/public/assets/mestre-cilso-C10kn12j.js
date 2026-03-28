@@ -1,0 +1,1 @@
+import{u as t,j as o}from"./index-DM-tQ3_e.js";import{R as e,p as s}from"./projects-Bw51zHmu.js";import{P as p}from"./project-layout-PcqQLAz9.js";const a=function(){return t(),o.jsx(e,{className:"pt-32",children:o.jsx(p,{project:s["project-2"]})})};export{a as component};
